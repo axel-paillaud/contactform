@@ -598,8 +598,9 @@ class Contactform extends Module implements WidgetInterface
                 if (empty($contact->email) || !Mail::Send(
                     $this->context->language->id,
                     'contact',
-                    $this->trans('Message from contact form', [], 'Emails.Subject') . ' [no_sync]',
-                    // $contact->name,
+                    // $this->trans('Message from contact form', [], 'Emails.Subject') . ' [no_sync]',
+                    // We want subject type here
+                    $contact->name,
                     $var_list,
                     $contact->email,
                     $contact->name,
